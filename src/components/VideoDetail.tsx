@@ -12,7 +12,8 @@ const VideoDetail = ({ video }) => {
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 
   return (
-      <div className="container mx-auto mt-2 break-words">
+    <div className="container mx-auto mt-2 break-words">
+      <div className="youtube">
         <iframe
           frameBorder="0"
           height="100%"
@@ -20,14 +21,15 @@ const VideoDetail = ({ video }) => {
           title="Video Player"
           src={videoSrc}
         />
-        <Thx>
+      </div>
+      <Thx>
           <p>
             {video.snippet.title} - {video.snippet.channelTitle}
           </p>
-          <p>{video.snippet.channelTitle}</p>
-          <p>{video.snippet.description}</p>
-        </Thx>
-      </div>
+        <p>{video.snippet.channelTitle}</p>
+        <p>{video.snippet.description}</p>
+      </Thx>
+    </div>
     // <>
     //   <Paper elevation={6} style={{ height: '70%' }}>
     //     <iframe
