@@ -43,21 +43,26 @@ class App extends React.Component {
     const { selectedVideo, videos } = this.state;
     console.log('YOUTUBE_API_KEY：' + process.env.REACT_APP_YOUTUBE_API_KEY);
     return (
-      <Grid justify="center" container spacing={10}>
-        <Grid item xs={12}>
-          <Grid container spacing={10}>
-            <Grid item xs={12}>
-              <SearchBar onFormSubmit={this.handleSubmit} />
-            </Grid>
-            <Grid item xs={8}>
-              <VideoDetail video={selectedVideo} />
-            </Grid>
-            <Grid item xs={4}>
-              <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+      <>
+        <VideoDetail video={selectedVideo} />
+        <SearchBar onFormSubmit={this.handleSubmit} />
+        <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
+      </>
+      // <Grid justify="center" container spacing={10}>
+      //   <Grid item xs={12}>
+      //     <Grid container spacing={10}>
+      //       <Grid item xs={12}>
+      //         <SearchBar onFormSubmit={this.handleSubmit} />
+      //       </Grid>
+      //       <Grid item xs={8}>
+      //         <VideoDetail video={selectedVideo} />
+      //       </Grid>
+      //       <Grid item xs={4}>
+      //         <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
+      //       </Grid>
+      //     </Grid>
+      //   </Grid>
+      // </Grid>
     );
   }
 }

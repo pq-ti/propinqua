@@ -1,4 +1,5 @@
 import React from 'react';
+import Thx from '../../lib/thx';
 
 import { Paper, TextField } from '@material-ui/core';
 type props = {
@@ -22,11 +23,14 @@ class SearchBar extends React.Component<props, {}> {
 
   render() {
     return (
-      <Paper elevation={6} style={{ padding: '25px' }}>
-        <form onSubmit={this.handleSubmit}>
-          <TextField fullWidth label="Search..." onChange={this.handleChange} />
-        </form>
-      </Paper>
+      <form onSubmit={this.handleSubmit}>
+        <TextField fullWidth label="Search..." onChange={this.handleChange} />
+      </form>
+      //  <Paper elevation={6} style={{ padding: '25px' }}>
+      //   <form onSubmit={this.handleSubmit}>
+      //     <TextField fullWidth label="Search..." onChange={this.handleChange} />
+      //   </form>
+      // </Paper>
     );
   }
 }
