@@ -23,11 +23,9 @@ const VideoDetail = ({ video }) => {
         />
       </div>
       <Thx>
-          <p>
-            {video.snippet.title} - {video.snippet.channelTitle}
-          </p>
-        <p>{video.snippet.channelTitle}</p>
-        <p>{video.snippet.description}</p>
+        <p className="mt-4">{video.snippet.title}</p>
+        <p className="text-xs">チャンネル：{video.snippet.channelTitle}</p>
+        <p className="text-xs">{video.snippet.description}</p>
       </Thx>
     </div>
     // <>
