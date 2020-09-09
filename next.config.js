@@ -1,7 +1,24 @@
 require('dotenv').config();
+const path = require('path');
+const dotenv = require('dotenv-webpack');
 
 console.log(process.env.NODE_ENV);
 module.exports = {
+  webpack: (config) => {
+    config.plugins = config.plugins || [];
+
+    config.plugins = [
+      ...config.plugins,
+
+      // Read the .env file
+      new dotenv({
+        path: path.join(__dirname, '.env'),
+        systemvars: true,
+      }),
+    ];
+
+    return config;
+  },
   // webpack: (config) => {
   //   config.module.rules.push({
   //     test: /\.css$/,
