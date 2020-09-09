@@ -12,7 +12,6 @@ const VideoDetail = ({ video }) => {
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 
   return (
-    <Layout>
       <div className="container mx-auto mt-2 break-words">
         <iframe
           frameBorder="0"
@@ -29,7 +28,6 @@ const VideoDetail = ({ video }) => {
           <p>{video.snippet.description}</p>
         </Thx>
       </div>
-    </Layout>
     // <>
     //   <Paper elevation={6} style={{ height: '70%' }}>
     //     <iframe

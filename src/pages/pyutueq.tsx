@@ -1,4 +1,5 @@
 import React from 'react';
+import Layout from '../components/layout';
 
 import { Grid } from '@material-ui/core';
 
@@ -43,11 +44,11 @@ class App extends React.Component {
     const { selectedVideo, videos } = this.state;
     console.log('YOUTUBE_API_KEY：' + process.env.REACT_APP_YOUTUBE_API_KEY);
     return (
-      <>
+      <Layout>
         <VideoDetail video={selectedVideo} />
         <SearchBar onFormSubmit={this.handleSubmit} />
         <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
-      </>
+      </Layout>
       // <Grid justify="center" container spacing={10}>
       //   <Grid item xs={12}>
       //     <Grid container spacing={10}>
